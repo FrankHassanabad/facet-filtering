@@ -1,0 +1,22 @@
+<li class="subcategory-list-item">
+  <span *ngIf="subcategory.count">
+    <input
+      class="subcategory-list-checkbox"
+      type="checkbox"
+      [checked]="subcategory.isFiltered"
+      (click)="filter(!subcategory.isFiltered)"
+    >
+    <span
+      *ngIf="subcategory.min != subcategory.max"
+    >
+      <span class="subcategory-label">{{subcategory.min}}-{{subcategory.max}}</span>
+      <span class="subcategory-count">{{subcategory.count}}</span>
+    </span>
+    <span
+      *ngIf="subcategory.min == subcategory.max"
+    >
+      <span class="subcategory-label">{{subcategory.min}}</span>
+      <span class="subcategory-count">{{subcategory.count}}</span>
+    </span>
+  </span>
+</li>

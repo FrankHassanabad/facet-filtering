@@ -1,0 +1,18 @@
+.category-list-item {
+  list-style-type: none;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+}
+
+.category-list-title {
+  display: inline-block;
+  min-width: 148px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 7px;  
+  background-color: rgb(49, 56, 71);
+}
+
+.category-list {
+  padding-left: 5px;
+}

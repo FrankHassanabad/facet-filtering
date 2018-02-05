@@ -1,0 +1,14 @@
+<li class="item">
+  <h1 class="item-text">
+    {{item.text}}
+  </h1>
+  <ul class="item-unordered-list">
+    <li
+      class="item-attributes"
+      *ngFor="let attribute of item.attributes"
+    >
+      <span class="item-value">{{attribute.value}}</span>
+      <span class="item-name">{{attribute.name}}</span>
+    </li>
+  </ul>
+</li>

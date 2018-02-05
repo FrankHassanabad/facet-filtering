@@ -1,0 +1,19 @@
+.subcategory-list-item {
+  font-family: monospace, monospace;
+  font-size: small;
+  list-style-type: none;
+  text-overflow: ellipsis;
+}
+
+.subcategory-label {
+  margin-left: -5px;
+}
+
+.subcategory-count {
+  font-family: monospace, monospace;
+  font-size: small;
+  background: #455066;
+  border-radius: 7px;
+  padding-left: 2px;
+  padding-right: 2px;
+}

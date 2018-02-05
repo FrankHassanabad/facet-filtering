@@ -1,0 +1,25 @@
+.filter {
+  list-style-type: none;
+  float: left;
+}
+
+.filter-text {
+  padding-left: 10px;
+}
+
+.filter-button {
+  border: 0;
+  cursor: default;
+  border-radius: 3px;
+  display: inline-block;
+  margin: 0 8px 0 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  background: #455066;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0 .3rem;  
+  cursor: pointer;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -1px rgba(0, 0, 0, 0.12);
+}

@@ -1,0 +1,52 @@
+<h1>{{title}}</h1>
+
+<div
+  class="top-row"
+  fxLayout
+  fxLayout.xs="column"
+  fxLayoutAlign="start"
+  fxLayoutGap="40px"
+  fxLayoutGap.xs="0"
+>
+  <div class="picture"></div>
+  <ul class="filters" fxFlex>
+    <app-filter-display
+      *ngFor="let filter of categoryFilters"
+      [filter]="filter"
+      (unfiltered)="unfilter($event)"
+    >
+    </app-filter-display>
+  </ul>
+</div>
+
+<div
+  class="bottom-row"
+  fxLayout
+  fxLayout.xs="column"
+  fxLayoutAlign="center"
+  fxLayoutGap="40px"
+  fxLayoutGap.xs="0"
+>
+  <div
+    class="categories ngx-scroll"
+  >
+    <ul class="list">
+      <app-category
+        *ngFor="let category of categories"
+        [category]="category"
+        (filtered)="filter($event)"
+      >
+      </app-category>
+    </ul>
+  </div>
+
+  <div class="items-list ngx-scroll" fxFlex>
+    <ul class="list">
+      <app-item
+        *ngFor="let item of items"
+        [item]="item"
+      >
+      </app-item>
+    </ul>
+  </div>
+</div>

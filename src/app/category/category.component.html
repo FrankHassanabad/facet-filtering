@@ -1,0 +1,11 @@
+<li class="category-list-item">
+  <span class="category-list-title">{{category.title}}</span>
+  <ul class="category-list">
+    <app-subcategory
+      *ngFor="let subcategory of category.stats.aggregates"
+      [subcategory]="subcategory"
+      (filtered)="filter($event)"
+    >
+    </app-subcategory>
+  </ul>
+</li>
