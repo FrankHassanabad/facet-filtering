@@ -5,7 +5,6 @@ simple filtering of cars.
 
 ![gif of project](screen-sample.gif?raw=title "Facet-Filtering")
 
-
 Install and run
 ---
 
@@ -20,3 +19,5 @@ Run unit tests
 ```
 npm run test
 ```
+
+![gif of project](test-screen.png?raw=title "Unit-test")
