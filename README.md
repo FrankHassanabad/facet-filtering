@@ -3,6 +3,8 @@
 This is a simple example Angular application written with Angular5. It does
 simple filtering of cars.
 
+![gif of project](screen-sample.gif?raw=title "Facet-Filtering")
+
 
 Install and run
 ---
