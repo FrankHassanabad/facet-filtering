@@ -34,22 +34,27 @@ Unit test code highlights
 * [filters.spec.ts](https://github.com/FrankHassanabad/facet-filtering/blob/master/src/app/filters.spec.ts#L151) - Edge cases for filters
 
 Accomplished:
+* Angular2+ (Angular5)
+* TypeScript in most areas. Very few `any`
 * Jasime Unit tests
 * Some integration tests
 * Card based layout
 * Filters work as a `OR` filter
-* Angular2+ (Angular5)
-* TypeScript in most areas. Very few `any`
 
 TODO:
-* Use -1 for filters
-* Implement cars as a AngularService
-* Use pipe for title case formatting
-* Use cypress.io for e2e testing
-* Add `scss` instead of regular `css` files
+* Implement mock-cars as a AngularService
+* Animations of cards
 * Style the checkbox
+* Use -1 for filters
+* Align left the numbers in the category section
+* Truncate the title with ellipse when too and give a tool tip
+* Use pipe for title case formatting and pipe for numerical data
+* Use cypress.io for e2e testing
 * Use more semantic HTML such as `<section>` where appropriate
-* Remove use of float for all flex-box.
+* Remove use of float for just angular flex-box.
 * JSDocs for the source
 * Pretty name "mapping" for the car JSON
-* Sort the lists so that filters are predictible
+* Sort the lists so that filters and car placements are predictible
+* Dom tricks to not show all cards on the DOM (performance) or paging/infinite scroll of data
+* Add `scss` instead of regular `css` files
+* More types and TypeScript strictness
