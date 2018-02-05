@@ -1,4 +1,6 @@
-<h1>{{title}}</h1>
+<h1>
+  {{title}}
+</h1>
 
 <div
   class="top-row"
@@ -8,8 +10,14 @@
   fxLayoutGap="40px"
   fxLayoutGap.xs="0"
 >
-  <div class="picture"></div>
-  <ul class="filters" fxFlex>
+  <div
+    class="picture"
+  >
+  </div>
+  <ul
+    class="filters"
+    fxFlex
+  >
     <app-filter-display
       *ngFor="let filter of categoryFilters"
       [filter]="filter"
@@ -30,7 +38,9 @@
   <div
     class="categories ngx-scroll"
   >
-    <ul class="list">
+    <ul
+      class="list"
+    >
       <app-category
         *ngFor="let category of categories"
         [category]="category"
@@ -40,8 +50,13 @@
     </ul>
   </div>
 
-  <div class="items-list ngx-scroll" fxFlex>
-    <ul class="list">
+  <div
+    class="items-list ngx-scroll"
+    fxFlex
+  >
+    <ul
+      class="list"
+    >
       <app-item
         *ngFor="let item of items"
         [item]="item"

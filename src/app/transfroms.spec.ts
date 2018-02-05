@@ -54,7 +54,6 @@ describe('transforms', () => {
         {name: 'lbs', value: 0},
         {name: 'acc', value: 0},
         {name: 'year', value: 0},
-        {name: 'origin', value: 0},
       ];
       expect(transforms.carsToItems([mockCar])).toEqual([mockItem]);
     });
@@ -70,7 +69,6 @@ describe('transforms', () => {
         {name: 'lbs', value: 0},
         {name: 'acc', value: 0},
         {name: 'year', value: 0},
-        {name: 'origin', value: 0},
       ]);
     });
   });
@@ -164,20 +162,6 @@ describe('transforms', () => {
         },
         {
           title: 'year',
-          max: 0,
-          min: 0,
-          stats: {
-            aggregates: [{
-              count: 1,
-              min: 0,
-              max: 0,
-              isFiltered: false,
-            }],
-            count: {0: 1}
-          }
-        },
-        {
-          title: 'origin',
           max: 0,
           min: 0,
           stats: {

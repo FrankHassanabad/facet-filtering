@@ -17,7 +17,8 @@ export const reduceCarsToCategories = (
   cars.reduce((accum, car) => {
     Object
       .entries(car)
-      .filter(([key, value]) => typeof value === 'number' && value !== -1)
+      .filter(([key, value]) =>
+        typeof value === 'number' && value !== -1 && key !== 'origin')
       .map(([key, value]) => {
         accum[key] = createCategory(accum[key], value);
       });

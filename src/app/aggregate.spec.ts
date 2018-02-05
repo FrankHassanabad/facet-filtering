@@ -28,7 +28,6 @@ describe('aggregate', () => {
       lbs: 0,
       acc: 0,
       year: 0,
-      origin: 0,
     };
     mockCategory = {
       title: '',
@@ -57,7 +56,6 @@ describe('aggregate', () => {
         lbs: mockCategory,
         acc: mockCategory,
         year: mockCategory,
-        origin: mockCategory,
       });
     });
   });

@@ -35,6 +35,7 @@ import {
 export class AppComponent {
   title = 'Facet Filtering';
   items: Item[] = carsToItems(cars);
+
   originalItems: Item[] = this.items;
   categories = carsToCategories(cars, 5);
   filters: Filter[] = [];

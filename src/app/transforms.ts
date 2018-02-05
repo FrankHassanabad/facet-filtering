@@ -21,17 +21,18 @@ export interface Car {
   lbs: number;
   acc: number;
   year: number;
-  origin: number;
+  origin?: number;
 }
 
 export const carsToItems = (
-  carsToTransform: Car[]
+  cars: Car[]
 ): Item[] =>
-  carsToTransform
+  cars
     .map(car => ({
       text: car.name,
       attributes: carToAttributes(car)
-  }));
+      })
+    );
 
 export const carToAttributes = (
   car: Car
@@ -39,7 +40,7 @@ export const carToAttributes = (
   return Object
     .entries(car)
     .filter(([key, value]) =>
-      key !== 'name'
+      !['name', 'origin'].includes(key)
     )
     .map(([key, value]) => ({
       name: key,
