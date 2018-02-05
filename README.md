@@ -35,11 +35,13 @@ Unit test code highlights
 
 Accomplished:
 * Angular2+ (Angular5)
+* Broken down components for each part of the UI
 * TypeScript in most areas. Very few `any`
+* Wrote most of the code in pure functions and kept Angular touch points small
 * Jasime Unit tests
-* Some integration tests
 * Card based layout
 * Filters work as a `OR` filter
+* Wrote aggregate functions which take parameters for buckets
 
 TODO:
 * Implement mock-cars as a AngularService
