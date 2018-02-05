@@ -13,7 +13,7 @@ Install and run
 npm install
 npm start
 ```
-Open your browser to port 4200
+Open your browser to http://localhost:4200/
 
 Run unit tests
 ---
