@@ -25,7 +25,9 @@ describe('transforms', () => {
       dsp: 0,
       hp: 0,
       lbs: 0,
-      acc: 0
+      acc: 0,
+      year: 0,
+      origin: 0,
     };
     mockCategory = {
       title: '',
@@ -51,6 +53,8 @@ describe('transforms', () => {
         {name: 'hp', value: 0},
         {name: 'lbs', value: 0},
         {name: 'acc', value: 0},
+        {name: 'year', value: 0},
+        {name: 'origin', value: 0},
       ];
       expect(transforms.carsToItems([mockCar])).toEqual([mockItem]);
     });
@@ -65,6 +69,8 @@ describe('transforms', () => {
         {name: 'hp', value: 0},
         {name: 'lbs', value: 0},
         {name: 'acc', value: 0},
+        {name: 'year', value: 0},
+        {name: 'origin', value: 0},
       ]);
     });
   });
@@ -144,6 +150,34 @@ describe('transforms', () => {
         },
         {
           title: 'acc',
+          max: 0,
+          min: 0,
+          stats: {
+            aggregates: [{
+              count: 1,
+              min: 0,
+              max: 0,
+              isFiltered: false,
+            }],
+            count: {0: 1}
+          }
+        },
+        {
+          title: 'year',
+          max: 0,
+          min: 0,
+          stats: {
+            aggregates: [{
+              count: 1,
+              min: 0,
+              max: 0,
+              isFiltered: false,
+            }],
+            count: {0: 1}
+          }
+        },
+        {
+          title: 'origin',
           max: 0,
           min: 0,
           stats: {

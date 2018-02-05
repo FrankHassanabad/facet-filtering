@@ -1,4 +1,4 @@
-import { Car } from './car';
+import { Car } from './transforms';
 
 export const cars: Car[] =
 [

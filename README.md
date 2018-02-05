@@ -40,3 +40,5 @@ TODO:
 * Use more semantic HTML such as `<section>` where appropriate
 * Remove use of float for all flex-box.
 * JSDocs for the source
+* Pretty name "mapping" for the car JSON
+* Sort the lists so that filters are predictible

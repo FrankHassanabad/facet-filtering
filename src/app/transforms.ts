@@ -20,6 +20,8 @@ export interface Car {
   hp: number;
   lbs: number;
   acc: number;
+  year: number;
+  origin: number;
 }
 
 export const carsToItems = (
