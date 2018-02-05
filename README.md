@@ -22,6 +22,17 @@ npm run test
 
 ![gif of project](test-screen.png?raw=title "Unit-test")
 
+Angular Code highlights
+* [app.component.ts](https://github.com/FrankHassanabad/facet-filtering/blob/master/src/app/app.component.ts#L36) - Main Component
+
+Plain TS/JS code highlights
+* [filters.ts](https://github.com/FrankHassanabad/facet-filtering/blob/master/src/app/filters.ts#L19) - Filter functions 
+* [aggregate.ts](https://github.com/FrankHassanabad/facet-filtering/blob/master/src/app/aggregate.ts#L17) - Aggregate functions
+* [transforms.ts](https://github.com/FrankHassanabad/facet-filtering/blob/master/src/app/transforms.ts#L28) - Data Transform functions
+
+Unit test code highlights
+* [filters.spec.ts](https://github.com/FrankHassanabad/facet-filtering/blob/master/src/app/filters.spec.ts#L151) - Edge cases for filters
+
 Accomplished:
 * Jasime Unit tests
 * Some integration tests
