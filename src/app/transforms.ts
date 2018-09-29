@@ -24,16 +24,6 @@ export interface Car {
   origin?: number;
 }
 
-export const carsToItems = (
-  cars: Car[]
-): Item[] =>
-  cars
-    .map(car => ({
-      text: car.name,
-      attributes: carToAttributes(car)
-      })
-    );
-
 export const carToAttributes = (
   car: Car
 ): Attribute[] => {
@@ -47,6 +37,16 @@ export const carToAttributes = (
       value
     }));
 };
+
+export const carsToItems = (
+  cars: Car[]
+): Item[] =>
+  cars
+    .map(car => ({
+      text: car.name,
+      attributes: carToAttributes(car)
+      })
+    );
 
 export const toArray = (
   cars: any

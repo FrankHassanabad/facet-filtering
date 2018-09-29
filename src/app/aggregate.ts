@@ -10,20 +10,23 @@ import {
   Subcategory,
 } from './subcategory/Subcategory';
 
-// TODO: Handle -1 as a valid filter
-export const reduceCarsToCategories = (
-  cars: Car[]
-): any =>
-  cars.reduce((accum, car) => {
-    Object
-      .entries(car)
-      .filter(([key, value]) =>
-        typeof value === 'number' && value !== -1 && key !== 'origin')
-      .map(([key, value]) => {
-        accum[key] = createCategory(accum[key], value);
-      });
-    return accum;
-  }, {} as any);
+export const getBoundary = (
+  length: number,
+  slices: number,
+): number => {
+  const boundary = Math.floor(length / slices);
+  if (boundary === 0 ) {
+    return 1;
+  } else {
+    return boundary;
+  }
+};
+
+export const incrementCount = (
+  category: Category,
+  value: number
+): number =>
+  category.stats.count[value] != null ? category.stats.count[value] + 1 : 1;
 
 export const createCategory = (
   category: Category,
@@ -49,11 +52,33 @@ export const createCategory = (
   }
 };
 
-export const incrementCount = (
-  category: Category,
-  value: number
-): number =>
-  category.stats.count[value] != null ? category.stats.count[value] + 1 : 1;
+// TODO: Handle -1 as a valid filter
+export const reduceCarsToCategories = (
+  cars: Car[]
+): any =>
+  cars.reduce((accum, car) => {
+    Object
+      .entries(car)
+      .filter(([key, value]) =>
+        typeof value === 'number' && value !== -1 && key !== 'origin')
+      .map(([key, value]) => {
+        accum[key] = createCategory(accum[key], value);
+      });
+    return accum;
+  }, {} as any);
+
+export const aggregateCounts = (
+    sortedKeys: string[],
+    counts: {}
+  ): Subcategory =>
+    sortedKeys.reduce((subcategory, key) => {
+      const keyAsNum = parseInt(key, 10);
+      subcategory.count = subcategory.count ? subcategory.count + counts[key] : counts[key];
+      subcategory.min = subcategory.min ? Math.min(subcategory.min, keyAsNum) : keyAsNum;
+      subcategory.max = subcategory.max ? Math.max(subcategory.max, keyAsNum) : keyAsNum;
+      subcategory.isFiltered = false;
+      return subcategory;
+    }, {} as any);
 
 export const aggregate = (
   categories: Category[],
@@ -70,27 +95,3 @@ export const aggregate = (
     return category;
   });
 
-export const aggregateCounts = (
-  sortedKeys: string[],
-  counts: {}
-): Subcategory =>
-  sortedKeys.reduce((subcategory, key) => {
-    const keyAsNum = parseInt(key, 10);
-    subcategory.count = subcategory.count ? subcategory.count + counts[key] : counts[key];
-    subcategory.min = subcategory.min ? Math.min(subcategory.min, keyAsNum) : keyAsNum;
-    subcategory.max = subcategory.max ? Math.max(subcategory.max, keyAsNum) : keyAsNum;
-    subcategory.isFiltered = false;
-    return subcategory;
-  }, {} as any);
-
-export const getBoundary = (
-  length: number,
-  slices: number,
-): number => {
-  const boundary = Math.floor(length / slices);
-  if (boundary === 0 ) {
-    return 1;
-  } else {
-    return boundary;
-  }
-};
