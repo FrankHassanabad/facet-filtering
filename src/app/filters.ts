@@ -56,6 +56,15 @@ export const getCurrentFilters = (
   }
 };
 
+export const shouldGetItemFromFilter = (
+  filters: Filter[],
+  item: Item
+): boolean =>
+  filters.some(({ category, subcategory }) => {
+    const attribute = item.attributes.find(({name}) => name === category.title);
+    return attribute.value >= subcategory.min && attribute.value <= subcategory.max;
+  });
+
 export const getItemsFromFilter = (
   filters: Filter[],
   items: Item[]
@@ -66,12 +75,3 @@ export const getItemsFromFilter = (
     return items.filter(item => shouldGetItemFromFilter(filters, item));
   }
 };
-
-export const shouldGetItemFromFilter = (
-  filters: Filter[],
-  item: Item
-): boolean =>
-  filters.some(({ category, subcategory }) => {
-    const attribute = item.attributes.find(({name}) => name === category.title);
-    return attribute.value >= subcategory.min && attribute.value <= subcategory.max;
-  });
